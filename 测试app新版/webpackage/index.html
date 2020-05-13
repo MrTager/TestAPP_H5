@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name ="viewport" content ="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <title>首页</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/webJsBridge.js"></script>
+    <script src="js/Tool.js"></script>
+    <script src="js/devInfo.js"></script>
+    <script src="js/vconsole.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/clearDefault.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<div id="testApp_index"> 
+    <div id="online" v-if="online">
+        <Status></Status>
+        <Loading v-if="showLoading.flag" :load_txt="showLoading.text"></Loading>
+        <Search></Search>
+        <Devlist></Devlist>
+    </div>
+    <div id="offline" v-else-if="online === false">
+        <div>哦呦，与网关断线了</div>
+    </div>
+</div>
+</body>
+<!-- <script>var vConsole = new VConsole();</script> -->
+<script src="js/components/Status.js"></script>
+<script src="js/components/loading.js"></script>
+<script src="js/components/search.js"></script>
+<script src="js/components/Devlist.js"></script>
+<script>
+var index = new Vue({
+    el: '#testApp_index',
+    data: {
+      online:true,
+      showLoading:{flag:false,text:"正在加载"},
+    },
+    components:{
+
+    },
+    methods:{},
+    created:function(){
+        //周期性发送心跳包
+        
+        
+    }
+})
+</script>
+</html>

@@ -1,0 +1,370 @@
+html{
+    margin: 0;
+    padding: 0;
+    /* font-size: 62.5%; */
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    width: 100%;
+    height: 10px;
+    text-align: center;
+    font-size: 5px;
+    font-weight: bold;
+}
+.header h1{
+    line-height: 40px;
+}
+
+.center{
+    margin-top: 15px;
+}
+.netInfo{
+    position: relative;
+    height: 30px;
+}
+.devNum{
+    position: absolute;
+    font-size: 20px;
+}
+.devState{
+    position: absolute;
+    font-size: 20px;
+    right: 0rem;
+    float: left;
+}
+#onlineCol{
+    display: none;
+    float: left;
+    width: 20px;
+    height:20px;
+    background-color: seagreen;
+    margin-top: 3px;
+    background: url("../image/onlineCol.png");
+    background-size: 20px 20px;
+    background-repeat:no-repeat;
+}
+#noCon{
+    
+    width: 100px;
+    
+}
+#yesCon{
+    display: none;
+    width: 100px;
+    color: rgba(81, 226, 52, 1);
+}
+.connetBtns{
+    position: relative;
+    height: 35px;
+}
+.button1 {
+    position: absolute;
+    border: 1px solid #408BFE;
+    background-color: #408BFE;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    left: 20px;
+}
+/* .button1:active{
+    background-color: white;
+    color: blue;
+} */
+.button2 {
+    position: absolute;
+    border: 1px solid #408BFE;
+    background-color: #408BFE;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    right: 20px;
+}
+button{
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+}
+button:active{
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0);
+}
+/* .button2:active{
+    background-color: white;
+    color: blue;
+} */
+.getDevList{
+    width: 100%;
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+   
+}
+.getDevBtn{
+    border: 1px solid #408BFE;
+    background-color: #408BFE;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    width: 85%;
+    height: 50px;
+    position: absolute;
+    
+}
+#connetTxt{
+    width: 100%;
+    font-size: 20px;
+    height: 30px;
+    text-align: center;
+}
+.devList{
+    width: 100%;
+    height: auto;
+}
+ul,li{ padding:0;margin:0;list-style:none}
+.devList ul{
+    width: 100%;
+    height: auto;
+    list-style: none;
+}
+.devList ul li{
+    width: 90%;
+    height: 260px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3);
+}
+.liTitle{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+.devItem{
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+}
+.delDev{
+    text-align: center;
+}
+.delDevBtn {
+    background-color: #FF2728;
+    border: 1px solid #FF2728;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 30%;
+    height: 30px;
+    /* right: 50px; */ 
+}
+.controlBtn{
+    background-color: #408BFE;
+    border: 1px solid #408BFE;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 30%;
+    height: 30px;
+}
+a {  
+    text-decoration:none;
+    color: black;
+  }
+#loadingView{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(117, 117, 117, 0.5);
+    text-align: center;
+    display: none;
+    z-index: 988;
+}
+.loading{
+    width: 50px;
+    height: 50px;
+    margin-top: 60%;
+    -webkit-animation: rot .8s linear infinite;
+}
+
+@-webkit-keyframes rot{
+
+0%{-webkit-transform:rotate(0deg);}
+
+25%{-webkit-transform:rotate(90deg);}
+
+50%{-webkit-transform:rotate(180deg);}
+
+75%{-webkit-transform:rotate(270deg);}
+
+100%{-webkit-transform:rotate(360deg);}
+}
+#logBtn{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 80px;
+    background-color: green;
+    color: white;
+    z-index: 888;
+}
+#logView{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 1);
+    display: none;
+    box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3);
+}
+#logVBtn1{
+    position: absolute;
+    left: 5%;
+    width: 80px;
+    height: 25px;
+    background-color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 15px;
+}
+#logVBtn2{
+    position: absolute;
+    right: 5%;
+    width: 80px;
+    height: 25px;
+    background-color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 15px;
+}
+#panel{
+    position: absolute;
+    left: 2.5%;
+    right:2.5%;
+    top: 30px;
+    width: auto;
+    height: 90%;
+    text-align: center;
+}
+#panel ul {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+.logItem{
+    color: black;
+    font-size: 10px;
+    text-align: left;
+}
+
+.consoleLog{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+.logBtn{
+    width: 88%;
+    height: 40px;
+    border: 1px solid #408BFE;
+    background-color: #408BFE;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#viewTwo{
+    display: none;
+    text-align: center;
+}
+.btnLine{
+    text-align: center;
+    width: 100%;
+    height: 50px;
+}
+.backDevListBtn{
+    width: 88%;
+    height: 40px;
+    border: 1px solid #408BFE;
+    background-color: #408BFE;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#controlItems{
+    width: 100%;
+    text-align: center;
+}
+#controlContianer{
+    width: 100%;
+    list-style: none;
+    text-align: center;
+}
+.controlItem{
+    width: 90%;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3);
+}
+.devStatePanel{
+    width: 100%;
+    text-align: center;
+}
+#statePanel{
+    width: 95%;
+    height: 150px;
+    background-color: chartreuse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
