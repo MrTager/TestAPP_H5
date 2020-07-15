@@ -115,7 +115,6 @@ var wbjsBridge = wbjsBridge || {};
 
     wbjsBridge.method = wbjsBridge.method || {};
     connectWebViewJavascriptBridge(function (bridge) {
-
         /**
          * app to web 数据透传接口
          *
@@ -150,7 +149,6 @@ var wbjsBridge = wbjsBridge || {};
 wbjsBridge.method.sendToNative = function (params, funcCallback) {
     wbjsBridge.method.bridge.callHandler('sendData', params, function (response) {
         //console.info('sendToNative got response: ', response)
-
         if (typeof funcCallback == 'function') {
             funcCallback(response);
         }

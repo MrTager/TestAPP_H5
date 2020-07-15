@@ -273,6 +273,7 @@ function createDevList(n){
             
             let DeviceId=devArrs[i].Data[j].DeviceId;
             let ModelId=devArrs[i].Data[j].ModelId;
+            let RealModelId = devArrs[i].Data[j].RealModelId;
             let Name=devArrs[i].Data[j].Name;
             let Online=devArrs[i].Data[j].Online;
             let OnlineState="";
@@ -288,19 +289,23 @@ function createDevList(n){
             }
             let macAlllineLi=`<li onclick="macJumpLocation(this)">${DeviceId}<span style="display:none">${count}</span></li>`
             macAlllineLis+=macAlllineLi;
-
+            
             let RegisterStatus=devArrs[i].Data[j].RegisterStatus;
             let Version=devArrs[i].Data[j].Version;
             let devType="";
             let headFlag=false;
+            console.log('devInfo.rows',devInfo.rows)
             for(let m=0;m<devInfo.rows.length;m++){
+                console.log('111',devInfo.rows[m].config.modelId)
+                console.log('222',ModelId)
                 if(devInfo.rows[m].config.modelId==ModelId){
+                    console.log('找一下',devInfo.rows[m])
                     headFlag=true;
                     devType=devInfo.rows[m].labelModel;
                     let li=`<li id="devOneLi${count}">
                     <div class="liTitle">设备${count}</div>
                     <div class="devItem">&nbsp&nbsp&nbsp名称：<input type="text" onFocus="saveOldValue(this)" onblur="setOldValue(this)" onkeyup="confirmBtn(this)"  class="devName" value=${Name}></div>
-                    <div class="devItem">&nbsp&nbsp&nbspModel ID：<span class="devName">${ModelId}</span></div>
+                    <div class="devItem">&nbsp&nbsp&nbspModel ID：<span class="devName">${RealModelId}</span></div>
                     <div class="devItem">&nbsp&nbsp&nbsp版本号：<span class="devName">${Version}</span></div>
                     <div class="devItem">&nbsp&nbsp&nbsp子设备类型：<span class="devName">${devType}</span></div>
                     <div class="devItem">&nbsp&nbsp&nbsp状态：<span class="devName">${OnlineState}</span></div>
@@ -314,11 +319,13 @@ function createDevList(n){
                     break;
                 }
             }
+
+            loadingView.style.display="none";
             if(headFlag==false){
                 let li=`<li id="devOneLi${count}">
-                   <div class="liTitle">设备${count}</div>
-                   <div class="devItem">&nbsp&nbsp&nbspMAC：<span class="devName">${DeviceId}</span></div>
-                   <div class="devItem">&nbsp&nbsp&nbsp名称：<input type="text" onFocus="saveOldValue(this)" onblur="setOldValue(this)" onkeyup="confirmBtn(this)"  class="devName" value=${Name}></div>
+                    <div class="liTitle">设备${count}</div>
+                    <div class="devItem">&nbsp&nbsp&nbspMAC：<span class="devName">${DeviceId}</span></div>
+                    <div class="devItem">&nbsp&nbsp&nbsp名称：<input type="text" onFocus="saveOldValue(this)" onblur="setOldValue(this)" onkeyup="confirmBtn(this)"  class="devName" value=${Name}></div>
                     <div class="devItem">&nbsp&nbsp&nbspModel ID：<span class="devName">${ModelId}</span></div>
                     <div class="devItem">&nbsp&nbsp&nbsp版本号：<span class="devName">${Version}</span></div>
                     <div class="devItem">&nbsp&nbsp&nbsp状态：<span class="devName">${OnlineState}</span></div>
@@ -327,8 +334,8 @@ function createDevList(n){
                         <button class="delDevBtn" onclick="delDev(this)">删除</button>
                         &nbsp&nbsp&nbsp此设备没有相应的配置文件
                     </div>
-                   </li>`
-                   lis+=li;
+                    </li>`
+                    lis+=li;
                 if(alertFlag==false){
                    //alert(`配置文件中没有ModelId为${ModelId}的配置信息，请更新配置文件！`);
                    alertFlag=true;

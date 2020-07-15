@@ -24,6 +24,7 @@ function getAllDevInfo(n,functionCallback){
     if (window.WebViewJavascriptBridge) {
         //do your work here
         bridge.getProfileData(n, function (res) {
+            console.log('拿到',res)
             functionCallback(res)
            })
     } else {
@@ -32,6 +33,7 @@ function getAllDevInfo(n,functionCallback){
             , function() {
                 //do your work here
                 bridge.getProfileData(n, function (res) {
+                    console.log('拿到',res)
                 functionCallback(res)
                })
             },

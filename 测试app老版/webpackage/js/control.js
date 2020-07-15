@@ -97,7 +97,7 @@ function updateCtrlView(){
                             <div class="devInfoTypeItem">${btns}</div>
                             </li>`;
                             lis+=li
-                        }else if(dataType==1){
+                        }else if(dataType==1 || dataType==3){
                             //判断是范围 
                            // console.log("这个是范围选项可控")
                             let btns="";

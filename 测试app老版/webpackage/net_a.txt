@@ -1,0 +1,5 @@
+http://www.honyarcloud.com:8090/zigbee/products/list/
+
+magicbox.honyarcloud.com   5000   zhanghui  zhanghui
+
+http://debugapp.honyarcloud.com/dj94
